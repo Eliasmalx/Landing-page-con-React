@@ -1,26 +1,26 @@
 import React from "react";
+import Card from "./Card";
 
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+    let array = [
+		{title:"1" , text:"1", img:""},
+		{title:"2" , text:"2", img:""},
+		{title:"3" , text:"3", img:""},
+		{title:"4" , text:"4", img:""},
+	];
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+	
+	return (
+		<div className=" px-3 d-flex justify-content-between text-center">
+			{
+				array.map((item,index) =>(
+					<Card key={index} title={item.title} text={item.text} img={item.img}/>
+				))
+			}
 		</div>
 	);
 };
